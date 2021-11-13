@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "start": "node app.js"
   },
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": "v16.13.0"
+  },
   "dependencies": {
     "axios": "^0.19.2",
     "bcryptjs": "^2.4.3",
