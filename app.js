@@ -5,7 +5,6 @@ const path = require("path");
 
 const express = require("express");
 const app = express();
-const port = process.env.PORT || 5000;
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
@@ -59,7 +58,13 @@ mongoose
     }
   )
   .then(() => {
-    app.listen(port, () => console.log(`${port} running on!`));
+    app.listen(process.env.PORT || 5000, function () {
+      console.log(
+        "Express server listening on port %d in %s mode",
+        this.address().port,
+        app.settings.env
+      );
+    });
   })
   .catch((err) => {
     console.log(err);
